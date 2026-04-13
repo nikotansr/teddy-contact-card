@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Card</title>
+  <style>
+    :root {
+      --bg: #9f312f;
+      --text: #ffffff;
+      --card: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.18);
+      --button: #ffffff;
+      --button-text: #9f312f;
+      --muted: rgba(255, 255, 255, 0.82);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+    }
+
+    .photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.24);
+      margin-bottom: 16px;
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    .role {
+      margin: 8px 0 22px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .info {
+      display: grid;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 24px;
+    }
+
+    .row {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 12px 14px;
+    }
+
+    .label {
+      display: block;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 4px;
+    }
+
+    .value,
+    .value a {
+      color: var(--text);
+      text-decoration: none;
+      word-break: break-word;
+      font-size: 15px;
+    }
+
+    .buttons {
+      display: grid;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 12px 16px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+    }
+
+    .button:active {
+      transform: scale(0.98);
+    }
+
+    .primary {
+      background: var(--button);
+      color: var(--button-text);
+    }
+
+    .secondary {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--text);
+      background: transparent;
+    }
+
+    .note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="photo" src="Teddyface.jpg" alt="Profile photo" />
+
+    <h1>Siew Huey Zhong (Teddy)</h1>
+    <p class="role">Associate Director, CKA Design</p>
+
+    <section class="info">
+      <div class="row">
+        <span class="label">Phone</span>
+        <span class="value"><a href="tel:+6588770995">+65 8877 0995</a></span>
+      </div>
+
+      <div class="row">
+        <span class="label">Email</span>
+        <span class="value"><a href="mailto:teddy@example.com">teddy@example.com</a></span>
+      </div>
+
+      <div class="row">
+        <span class="label">Website</span>
+        <span class="value"><a href="https://www.cka-design.com/" target="_blank" rel="noopener noreferrer">www.cka-design.com</a></span>
+      </div>
+    </section>
+
+    <div class="buttons">
+      <a class="button primary" href="teddy.vcf">Save Contact</a>
+      <a class="button secondary" href="https://www.cka-design.com/" target="_blank" rel="noopener noreferrer">Visit Company Website</a>
+    </div>
+
+    <p class="note">
+      The “Save Contact” button links to a .vcf file, which works on both iPhone and Android by opening the contact import/save flow.
+    </p>
+  </main>
+</body>
+</html>
